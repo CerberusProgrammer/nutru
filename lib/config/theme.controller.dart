@@ -7,6 +7,6 @@ class ThemeController extends GetxController {
     brightness: Brightness.light,
     useMaterial3: true,
     colorSchemeSeed: Colors.purple,
-    textTheme: GoogleFonts.rubikTextTheme(),
+    textTheme: GoogleFonts.ralewayTextTheme(),
   ).obs;
 }

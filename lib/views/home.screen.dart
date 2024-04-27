@@ -1,7 +1,11 @@
 import 'package:draggable_home/draggable_home.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:nutru/config/theme.controller.dart';
+import 'package:nutru/views/widgets/progresscircle.dart';
+import 'package:nutru/views/widgets/progresstile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,31 +24,24 @@ class HomeScreen extends StatelessWidget {
       headerWidget: Container(
         color: Colors.purple.shade100,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
-          child: Column(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8),
+          child: Row(
             children: [
-              ListTile(
-                title: const Text('Proteins'),
-                subtitle: LinearProgressIndicator(
-                  minHeight: 15,
-                  value: 0.2,
-                  borderRadius: BorderRadius.circular(5),
-                ),
+              const ProgressCircle(
+                title: 'Progress',
+                actualValue: 10,
+                estimatedValue: 22,
               ),
-              ListTile(
-                title: const Text('Carbs'),
-                subtitle: LinearProgressIndicator(
-                  minHeight: 15,
-                  value: 0.2,
-                  borderRadius: BorderRadius.circular(5),
-                ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 20,
               ),
-              ListTile(
-                title: const Text('Fat'),
-                subtitle: LinearProgressIndicator(
-                  minHeight: 15,
-                  value: 0.2,
-                  borderRadius: BorderRadius.circular(5),
+              const Expanded(
+                child: Column(
+                  children: [
+                    ProgressTile(title: 'Proteins', progress: 0.8),
+                    ProgressTile(title: 'Carbs', progress: 0.3),
+                    ProgressTile(title: 'Fat', progress: 0.6),
+                  ],
                 ),
               ),
             ],

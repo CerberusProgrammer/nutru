@@ -1,7 +1,9 @@
 import 'package:draggable_home/draggable_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nutru/config/constants/constants.dart';
 import 'package:nutru/config/theme/theme.controller.dart';
+import 'package:nutru/views/widgets/floatingbutton.dart';
 import 'package:nutru/views/widgets/progresscircle.dart';
 import 'package:nutru/views/widgets/progresstile.dart';
 
@@ -14,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       centerTitle: true,
       appBarColor: Get.put(ThemeController().theme).value.colorScheme.primary,
       title: const Text(
-        'Nutrû',
+        title,
         style: TextStyle(color: Colors.white),
       ),
       headerExpandedHeight: 0.3,
@@ -46,16 +48,8 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: List.generate(20, (index) => const Text('hi')),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        elevation: 0,
-        focusElevation: 0,
-        hoverElevation: 0,
-        disabledElevation: 0,
-        highlightElevation: 0,
-        child: const Icon(Icons.add),
-      ),
+      body: List.generate(20, (index) => Text('$index')),
+      floatingActionButton: const FloatingButton(icon: Icons.add),
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nutru/config/theme.controller.dart';
-import 'package:nutru/views/home.screen.dart';
+import 'package:nutru/config/config.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,10 +11,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return GetMaterialApp.router(
+      routeInformationParser: appRouter.routeInformationParser,
+      routerDelegate: appRouter.routerDelegate,
+      routeInformationProvider: appRouter.routeInformationProvider,
       debugShowCheckedModeBanner: false,
       theme: Get.put(ThemeController().theme).value,
-      home: const HomeScreen(),
     );
   }
 }

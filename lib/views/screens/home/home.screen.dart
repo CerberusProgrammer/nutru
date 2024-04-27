@@ -1,9 +1,7 @@
 import 'package:draggable_home/draggable_home.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:nutru/config/theme.controller.dart';
+import 'package:nutru/config/theme/theme.controller.dart';
 import 'package:nutru/views/widgets/progresscircle.dart';
 import 'package:nutru/views/widgets/progresstile.dart';
 

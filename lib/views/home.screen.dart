@@ -15,7 +15,8 @@ class HomeScreen extends StatelessWidget {
         'Nutrû',
         style: TextStyle(color: Colors.white),
       ),
-      headerExpandedHeight: 0.30,
+      headerExpandedHeight: 0.3,
+      stretchMaxHeight: 0.4,
       headerWidget: Container(
         color: Colors.purple.shade100,
         child: Padding(

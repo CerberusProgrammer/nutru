@@ -1,11 +1,9 @@
 import 'package:draggable_home/draggable_home.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:nutru/config/constants/constants.dart';
 import 'package:nutru/config/theme/theme.controller.dart';
+import 'package:nutru/views/screens/home/head/constrainedhead.dart';
+import 'package:nutru/views/screens/home/head/expandedhead.dart';
 import 'package:nutru/views/widgets/floatingbutton.dart';
-import 'package:nutru/views/widgets/progresscircle.dart';
-import 'package:nutru/views/widgets/progresstile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,40 +12,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DraggableHome(
       centerTitle: true,
-      appBarColor: Get.put(ThemeController().theme).value.colorScheme.primary,
-      title: const Text(
-        title,
-        style: TextStyle(color: Colors.white),
-      ),
+      appBarColor: ThemeController().appTheme.colorScheme.primary,
+      title: const ConstrainedHeadbar(),
       headerExpandedHeight: 0.3,
       stretchMaxHeight: 0.4,
-      headerWidget: Container(
-        color: Colors.purple.shade100,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8),
-          child: Row(
-            children: [
-              const ProgressCircle(
-                title: 'Progress',
-                actualValue: 10,
-                estimatedValue: 22,
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 20,
-              ),
-              const Expanded(
-                child: Column(
-                  children: [
-                    ProgressTile(title: 'Proteins', progress: 0.8),
-                    ProgressTile(title: 'Carbs', progress: 0.3),
-                    ProgressTile(title: 'Fat', progress: 0.6),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      headerWidget: const ExpandedHeadbar(),
       body: List.generate(20, (index) => Text('$index')),
       floatingActionButton: const FloatingButton(icon: Icons.add),
     );

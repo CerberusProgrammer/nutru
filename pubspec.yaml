@@ -10,10 +10,9 @@ dependencies:
   draggable_home: ^1.0.5
   flutter:
     sdk: flutter
-  get: ^4.6.6
+  flutter_riverpod: ^2.5.1
   go_router: ^14.0.1
   google_fonts: ^6.2.1
-  http: ^1.2.1
 
 dev_dependencies:
   flutter_lints: ^3.0.0
